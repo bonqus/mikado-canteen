@@ -8,8 +8,8 @@ response = requests.get(url).json()
 days = response.get("days")
 
 for day in days:
-    print(day.get("dayOfWeek"))
+    print('\033[1m{}\033[0m'.format(day.get("dayOfWeek")))
     menus = day.get("menus")
     for menu in menus:
-        print('{:<18}'.format(menu.get("type")), end=' : ')
+        print('{:<18}'.format(menu.get("type")), end='    ')
         print(menu.get("menu"))
